@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ' *)",
+      "Bash(pip install *)",
+      "Bash(py --version)",
+      "Bash(py -m pip install python-pptx python-docx --quiet)",
+      "Bash(py -c ' *)",
+      "Bash(cp \"C:/Users/ouedr/Work-Storage/Projets/CYDILY/docs/Documents-fournis/DOSSIER ENTREPRISE/PRES GENERALE CYDILY réactualisée.pptx\" /tmp/pres.pptx)",
+      "Bash(cp \"C:/Users/ouedr/Work-Storage/Projets/CYDILY/docs/Documents-fournis/DOSSIER ENTREPRISE/Lien des réseaux sociaux.docx\" /tmp/reseaux.docx)",
+      "Read(//tmp/**)",
+      "Bash(cp *.pptx /tmp/pres.pptx)",
+      "Bash(cp *.docx /tmp/reseaux.docx)",
+      "Bash(mkdir -p /tmp/cydily)",
+      "Bash(cp *.pptx /tmp/cydily/pres.pptx)",
+      "Bash(cp *.docx /tmp/cydily/reseaux.docx)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\ouedr\\\\Work-Storage\\\\Projets\\\\CYDILY\\\\docs\\\\Documents-fournis\\\\DOSSIER ENTREPRISE\\\\\" | ForEach-Object { Write-Host $_.Name })"
+    ]
+  }
+}
