@@ -75,7 +75,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-14 pt-8 border-t border-white/15 flex flex-col md:flex-row justify-between gap-4 text-xs text-white/60">
-          <p>© {new Date().getFullYear()} CYDILY CBC — Formation & Conseil. Tous droits réservés.</p>
+          <p>© {new Date().getFullYear()} CYDILY CBC · Formation & Conseil. Tous droits réservés.</p>
           <p>Formation prise en charge à 100% par le 3FPT (sous conditions de dossier).</p>
         </div>
       </div>

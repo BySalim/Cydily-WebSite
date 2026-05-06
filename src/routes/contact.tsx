@@ -6,8 +6,8 @@ import { Phone, Mail, MapPin, Send, CheckCircle2 } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & inscription — CYDILY CBC" },
-      { name: "description", content: "Inscrivez-vous gratuitement à une formation CYDILY CBC ou contactez notre équipe pour un projet entreprise. Dakar — +221 78 290 84 79." },
+      { title: "Contact & inscription · CYDILY CBC" },
+      { name: "description", content: "Inscrivez-vous gratuitement à une formation CYDILY CBC ou contactez notre équipe pour un projet entreprise. Dakar · +221 78 290 84 79." },
       { property: "og:title", content: "Contact CYDILY CBC" },
       { property: "og:description", content: "Inscription gratuite, devis entreprises, partenariats." },
     ],
@@ -36,19 +36,25 @@ function ContactPage() {
       <section className="py-16 md:py-24">
         <div className="container-cydily grid lg:grid-cols-3 gap-10">
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl p-2 inline-flex mb-6 border border-border">
+            <div className="bg-white rounded-2xl p-2 inline-flex flex-wrap gap-1 mb-6 border border-border">
               <button
+                type="button"
                 onClick={() => setType("particulier")}
                 className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
-                  type === "particulier" ? "bg-[var(--accent)] text-[var(--primary-deep)]" : "text-foreground/70"
+                  type === "particulier"
+                    ? "bg-[var(--accent)] text-[var(--primary-deep)]"
+                    : "text-foreground/70 hover:text-[var(--primary)]"
                 }`}
               >
-                ★ Particulier — Gratuit
+                ★ Particulier · Gratuit
               </button>
               <button
+                type="button"
                 onClick={() => setType("entreprise")}
                 className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
-                  type === "entreprise" ? "bg-[var(--primary)] text-white" : "text-foreground/70"
+                  type === "entreprise"
+                    ? "bg-[var(--primary)] text-white"
+                    : "text-foreground/70 hover:text-[var(--primary)]"
                 }`}
               >
                 Entreprise
@@ -89,7 +95,7 @@ function ContactPage() {
                   <textarea
                     rows={5}
                     className="mt-1.5 w-full px-4 py-3 rounded-md border border-border bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
-                    placeholder={type === "particulier" ? "Parlez-nous de vous, de votre disponibilité…" : "Décrivez votre besoin (audit, formation intra, conseil…)"}
+                    placeholder={type === "particulier" ? "Parlez-nous de vous, de votre disponibilité…" : "Décrivez votre besoin (audit, formation intra, conseil…)."}
                   />
                 </div>
                 <button type="submit" className={type === "particulier" ? "btn-accent w-full" : "btn-primary w-full"}>

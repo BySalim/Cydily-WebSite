@@ -33,7 +33,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="hidden lg:flex items-center gap-3">
-          <Link to="/contact" className="btn-accent text-sm">S'inscrire — gratuit ★</Link>
+          <Link to="/contact" className="btn-accent text-sm">S'inscrire · gratuit ★</Link>
         </div>
         <button
           onClick={() => setOpen(!open)}
@@ -59,7 +59,7 @@ export function SiteHeader() {
               </Link>
             ))}
             <Link to="/contact" onClick={() => setOpen(false)} className="btn-accent mt-3">
-              S'inscrire — gratuit ★
+              S'inscrire · gratuit ★
             </Link>
           </div>
         </div>
