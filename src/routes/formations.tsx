@@ -9,9 +9,9 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 export const Route = createFileRoute("/formations")({
   head: () => ({
     meta: [
-      { title: "Formations gratuites — CYDILY CBC · 3FPT" },
+      { title: "Formations gratuites · CYDILY CBC · 3FPT" },
       { name: "description", content: "4 formations professionnelles 100% prises en charge par le 3FPT : housekeeping, intendance de cuisine, technicien de surface, excellence comportementale." },
-      { property: "og:title", content: "Formations CYDILY CBC — 100% prises en charge 3FPT" },
+      { property: "og:title", content: "Formations CYDILY CBC · 100% prises en charge 3FPT" },
       { property: "og:description", content: "Découvrez les 4 formations CYDILY accréditées 3FPT à Dakar." },
     ],
   }),
@@ -68,7 +68,7 @@ function FormationsPage() {
             Vous ne payez rien. Nous vous accompagnons pour monter votre dossier d'inscription.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link to="/contact" className="btn-accent">M'inscrire — c'est gratuit ★</Link>
+            <Link to="/contact" className="btn-accent">M'inscrire, c'est gratuit ★</Link>
             <a href="#formations" className="btn-ghost">Voir les 4 formations</a>
           </div>
         </div>

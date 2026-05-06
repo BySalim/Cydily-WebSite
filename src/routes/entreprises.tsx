@@ -5,8 +5,8 @@ import { ArrowRight, ShieldCheck, Building2, Briefcase, ClipboardCheck } from "l
 export const Route = createFileRoute("/entreprises")({
   head: () => ({
     meta: [
-      { title: "Entreprises — Audit, conseil & formation sur mesure · CYDILY CBC" },
-      { name: "description", content: "Solutions B2B : audit QHSE, conseil amélioration continue, formations intra-entreprise. Convention 3FPT — 90% pris en charge." },
+      { title: "Entreprises · Audit, conseil & formation sur mesure · CYDILY CBC" },
+      { name: "description", content: "Solutions B2B : audit QHSE, conseil amélioration continue, formations intra-entreprise. Convention 3FPT, 90% pris en charge." },
       { property: "og:title", content: "CYDILY CBC pour les entreprises" },
       { property: "og:description", content: "Audit QHSE, conseil et formations sur mesure. 90% financé par le 3FPT." },
     ],
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/entreprises")({
 function EntreprisesPage() {
   return (
     <SiteLayout>
-      {/* HERO B2B — registre institutionnel */}
+      {/* HERO B2B · registre institutionnel */}
       <section className="bg-[var(--primary-deep)] text-white py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.06]">
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full border-[40px] border-[var(--accent)]" />
@@ -29,7 +29,7 @@ function EntreprisesPage() {
           </h1>
           <p className="mt-6 text-lg text-white/85 max-w-2xl">
             Audit QHSE, conseil en amélioration continue, formation sur mesure de vos équipes.
-            Convention privative 3FPT × CYDILY × votre entreprise — <strong className="text-[var(--accent)]">90% pris en charge</strong>.
+            Convention privative 3FPT × CYDILY × votre entreprise. <strong className="text-[var(--accent)]">90% pris en charge</strong>.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link to="/contact" className="btn-accent">Demander un audit</Link>
