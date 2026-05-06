@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/a-propos")({
   head: () => ({
     meta: [
-      { title: "À propos — CYDILY CBC · Mme CISSE Yatera" },
+      { title: "À propos · CYDILY CBC · Mme CISSE Yatera" },
       { name: "description", content: "L'histoire de CYDILY CBC et de sa fondatrice Mme CISSE Yatera : 20 ans au service de l'humain, du travail social aux ressources humaines." },
       { property: "og:title", content: "À propos de CYDILY CBC" },
       { property: "og:description", content: "20 ans d'expérience humaine au service de la dignité du travail." },
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/a-propos")({
 function AboutPage() {
   return (
     <SiteLayout>
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-10">
         <div className="container-cydily grid lg:grid-cols-5 gap-12 items-start">
           <div className="lg:col-span-3">
             <p className="eyebrow">★ Notre histoire</p>
@@ -26,7 +26,7 @@ function AboutPage() {
               CYDILY est née d'une <span className="display">conviction.</span>
             </h1>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              « CYDILY » porte les noms de ses parents — c'est une marque profondément intime, qui porte l'idée
+              « CYDILY » porte les noms de ses parents. C'est une marque profondément intime, qui porte l'idée
               de transmission familiale. Création légale en 2022/2023. Démarrage effectif des activités fin 2025.
               Accréditation 3FPT obtenue en décembre 2025.
             </p>
@@ -40,7 +40,7 @@ function AboutPage() {
               <img src={founder} alt="Mme CISSE Yatera, fondatrice" loading="lazy" className="w-full h-auto" />
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
-              <strong className="text-[var(--primary-deep)]">Mme CISSE Yatera</strong> — Fondatrice & CEO
+              <strong className="text-[var(--primary-deep)]">Mme CISSE Yatera</strong> · Fondatrice & CEO
             </p>
           </div>
         </div>
