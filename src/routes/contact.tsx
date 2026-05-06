@@ -36,29 +36,45 @@ function ContactPage() {
       <section className="py-16 md:py-24">
         <div className="container-cydily grid lg:grid-cols-3 gap-10">
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl p-2 inline-flex flex-wrap gap-1 mb-6 border border-border">
-              <button
-                type="button"
-                onClick={() => setType("particulier")}
-                className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
+            <div
+              role="tablist"
+              aria-label="Type de contact"
+              className="bg-white rounded-2xl p-2 inline-flex flex-wrap gap-1 mb-6 border border-border shadow-[var(--shadow-subtle)]"
+            >
+              <label
+                className={`px-5 py-2.5 rounded-xl text-sm font-semibold cursor-pointer select-none transition-all duration-300 ${
                   type === "particulier"
-                    ? "bg-[var(--accent)] text-[var(--primary-deep)]"
-                    : "text-foreground/70 hover:text-[var(--primary)]"
+                    ? "bg-[var(--accent)] text-[var(--primary-deep)] shadow-[var(--shadow-subtle)]"
+                    : "text-foreground/70 hover:text-[var(--primary)] hover:bg-[var(--primary-mist)]/60"
                 }`}
               >
+                <input
+                  type="radio"
+                  name="contact-type"
+                  value="particulier"
+                  checked={type === "particulier"}
+                  onChange={() => setType("particulier")}
+                  className="sr-only"
+                />
                 ★ Particulier · Gratuit
-              </button>
-              <button
-                type="button"
-                onClick={() => setType("entreprise")}
-                className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
+              </label>
+              <label
+                className={`px-5 py-2.5 rounded-xl text-sm font-semibold cursor-pointer select-none transition-all duration-300 ${
                   type === "entreprise"
-                    ? "bg-[var(--primary)] text-white"
-                    : "text-foreground/70 hover:text-[var(--primary)]"
+                    ? "bg-[var(--primary)] text-white shadow-[var(--shadow-subtle)]"
+                    : "text-foreground/70 hover:text-[var(--primary)] hover:bg-[var(--primary-mist)]/60"
                 }`}
               >
+                <input
+                  type="radio"
+                  name="contact-type"
+                  value="entreprise"
+                  checked={type === "entreprise"}
+                  onChange={() => setType("entreprise")}
+                  className="sr-only"
+                />
                 Entreprise
-              </button>
+              </label>
             </div>
 
             {sent ? (

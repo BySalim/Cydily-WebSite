@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
+import { Reveal } from "@/components/Reveal";
 import heroImg from "@/assets/hero-portrait.jpg";
 import iconLogo from "@/assets/cydily-icon.png";
 import founderImg from "@/assets/founder.jpg";
@@ -188,8 +189,8 @@ function HomePage() {
             { big: "4", small: "formations certifiantes", compact: false },
             { big: "Français / Wolof", small: "formation bilingue, formateurs wolophones", compact: true },
             { big: "+ 20", small: "ans d'expérience humaine", compact: false },
-          ].map((s) => (
-            <div key={s.small} className="text-center md:text-left">
+          ].map((s, i) => (
+            <Reveal key={s.small} delay={i * 80} className="text-center md:text-left">
               <p
                 className={`font-bold text-[var(--primary)] leading-tight ${
                   s.compact ? "text-xl md:text-2xl" : "text-3xl md:text-4xl"
@@ -198,7 +199,7 @@ function HomePage() {
                 {s.big}
               </p>
               <p className="text-xs md:text-sm text-foreground/70 mt-1 leading-snug">{s.small}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -244,16 +245,28 @@ function HomePage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {formations.map((f, i) => (
-              <article key={f.slug} className={`card-cydily p-0 overflow-hidden ${i % 2 === 1 ? "lg:translate-y-6" : ""}`}>
+              <Reveal
+                key={f.slug}
+                delay={i * 100}
+                as="article"
+                className={`card-cydily p-0 overflow-hidden ${i % 2 === 1 ? "lg:translate-y-6" : ""}`}
+              >
                 <div className="aspect-[4/5] overflow-hidden">
-                  <img src={f.img} alt={f.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                  <img
+                    src={f.img}
+                    alt={f.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
                 </div>
                 <div className="p-5">
-                  <span className="text-xs font-semibold tracking-widest uppercase text-[var(--accent-deep)]">★ Gratuit · 3FPT</span>
+                  <span className="text-xs font-semibold tracking-widest uppercase text-[var(--accent-deep)]">
+                    ★ Gratuit · 3FPT
+                  </span>
                   <h3 className="text-lg font-semibold mt-2 text-[var(--primary-deep)]">{f.title}</h3>
                   <p className="text-sm text-foreground/70 mt-2">{f.desc}</p>
                 </div>
-              </article>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -262,7 +275,7 @@ function HomePage() {
       {/* MINI-RÉCIT FONDATRICE */}
       <section className="py-20 md:py-28 bg-[var(--primary-mist)]/40">
         <div className="container-cydily grid md:grid-cols-12 gap-10 items-center">
-          <div className="md:col-span-5 relative">
+          <Reveal direction="left" className="md:col-span-5 relative">
             <div className="rounded-[28px] overflow-hidden shadow-[var(--shadow-lifted)] aspect-[4/5]">
               <img
                 src={founderImg}
@@ -270,12 +283,18 @@ function HomePage() {
                 className="w-full h-full object-cover"
               />
             </div>
+            <img
+              src={iconLogo}
+              alt=""
+              aria-hidden
+              className="absolute -top-8 -right-6 w-24 h-24 opacity-90 animate-float hidden md:block"
+            />
             <div className="absolute -bottom-5 -right-5 bg-[var(--accent)] text-[var(--primary-deep)] rounded-2xl px-5 py-3 shadow-[var(--shadow-lifted)] hidden md:block">
               <p className="text-xs font-bold tracking-widest uppercase">Fondatrice</p>
               <p className="font-semibold">Mme Yatera CISSE</p>
             </div>
-          </div>
-          <div className="md:col-span-7">
+          </Reveal>
+          <Reveal direction="right" delay={120} className="md:col-span-7">
             <p className="eyebrow">Notre histoire</p>
             <h2 className="text-3xl md:text-5xl font-bold mt-3 text-[var(--primary-deep)] leading-tight">
               CYDILY, un nom qui dit{" "}
@@ -295,7 +314,7 @@ function HomePage() {
             <Link to="/a-propos" className="btn-ghost mt-8">
               Découvrir notre histoire <ArrowRight size={16} />
             </Link>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -307,14 +326,14 @@ function HomePage() {
             Quatre piliers qui guident chacune de nos décisions.
           </h2>
           <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {piliers.map(({ icon: Icon, title, text }) => (
-              <div key={title} className="card-cydily">
-                <div className="w-12 h-12 rounded-xl bg-[var(--primary)] text-white flex items-center justify-center mb-4">
+            {piliers.map(({ icon: Icon, title, text }, i) => (
+              <Reveal key={title} delay={i * 100} className="card-cydily">
+                <div className="w-12 h-12 rounded-xl bg-[var(--primary)] text-white flex items-center justify-center mb-4 transition-transform duration-300 hover:rotate-6 hover:scale-110">
                   <Icon size={22} />
                 </div>
                 <h3 className="font-semibold text-[var(--primary-deep)]">{title}</h3>
                 <p className="text-sm text-foreground/70 mt-2 leading-relaxed">{text}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -339,19 +358,23 @@ function HomePage() {
               </Link>
             </div>
             <div className="md:col-span-7 grid sm:grid-cols-2 gap-4">
-              <PartnerCard
-                name="Judea Universe"
-                role="Insertion professionnelle"
-                desc="Constitution des dossiers 3FPT, placement des apprenants, suivi terrain."
-                Icon={HandHeart}
-              />
-              <PartnerCard
-                name="Top de GRH"
-                role="Cabinet RH partenaire"
-                desc="Insertion entreprise, audit qualité post-formation, conseil RH."
-                Icon={Briefcase}
-              />
-              <div className="sm:col-span-2 rounded-[20px] bg-gradient-to-br from-[var(--primary-mist)] to-white border border-[var(--primary)]/10 p-6 flex items-center gap-4">
+              <Reveal delay={80}>
+                <PartnerCard
+                  name="Judea Universe"
+                  role="Insertion professionnelle"
+                  desc="Constitution des dossiers 3FPT, placement des apprenants, suivi terrain."
+                  Icon={HandHeart}
+                />
+              </Reveal>
+              <Reveal delay={160}>
+                <PartnerCard
+                  name="Top de GRH"
+                  role="Cabinet RH partenaire"
+                  desc="Insertion entreprise, audit qualité post-formation, conseil RH."
+                  Icon={Briefcase}
+                />
+              </Reveal>
+              <Reveal delay={240} className="sm:col-span-2 rounded-[20px] bg-gradient-to-br from-[var(--primary-mist)] to-white border border-[var(--primary)]/10 p-6 flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-[var(--accent)] text-[var(--primary-deep)] flex items-center justify-center shrink-0">
                   <Languages size={22} />
                 </div>
@@ -360,7 +383,7 @@ function HomePage() {
                   disponible avec formateurs wolophones, supports visuels, et alphabétisation
                   fonctionnelle intégrée.
                 </p>
-              </div>
+              </Reveal>
             </div>
           </div>
         </div>
@@ -369,7 +392,7 @@ function HomePage() {
       {/* B2C VS B2B */}
       <section className="py-20 md:py-28">
         <div className="container-cydily grid md:grid-cols-2 gap-6">
-          <div className="card-cydily relative overflow-hidden p-8 md:p-10 bg-gradient-to-br from-[var(--accent-soft)]/40 to-white border-[var(--accent)]/30">
+          <Reveal direction="left" className="card-cydily relative overflow-hidden p-8 md:p-10 bg-gradient-to-br from-[var(--accent-soft)]/40 to-white border-[var(--accent)]/30">
             <span className="text-xs font-bold tracking-widest uppercase text-[var(--accent-deep)] inline-flex items-center gap-1">
               <Star size={11} className="fill-[var(--accent)] text-[var(--accent)]" /> Particulier
             </span>
@@ -383,8 +406,8 @@ function HomePage() {
             <Link to="/contact" className="btn-accent mt-6">
               Je m'inscris <ArrowRight size={16} />
             </Link>
-          </div>
-          <div className="card-cydily relative overflow-hidden p-8 md:p-10 bg-gradient-to-br from-[var(--primary-mist)] to-white">
+          </Reveal>
+          <Reveal direction="right" delay={120} className="card-cydily relative overflow-hidden p-8 md:p-10 bg-gradient-to-br from-[var(--primary-mist)] to-white">
             <span className="text-xs font-bold tracking-widest uppercase text-[var(--primary)] inline-flex items-center gap-1">
               <Star size={11} className="fill-[var(--primary)] text-[var(--primary)]" /> Entreprise
             </span>
@@ -398,7 +421,7 @@ function HomePage() {
             <Link to="/entreprises" className="btn-primary mt-6">
               Solutions B2B <ArrowRight size={16} />
             </Link>
-          </div>
+          </Reveal>
         </div>
       </section>
 

@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import founder from "@/assets/founder.jpg";
+import iconLogo from "@/assets/cydily-icon.png";
 import { ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/a-propos")({
@@ -35,10 +36,16 @@ function AboutPage() {
               et un projet : faire des métiers de service un vrai standard d'excellence en Afrique de l'Ouest.
             </p>
           </div>
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 relative">
             <div className="rounded-[24px] overflow-hidden shadow-[var(--shadow-lifted)]">
               <img src={founder} alt="Mme CISSE Yatera, fondatrice" loading="lazy" className="w-full h-auto" />
             </div>
+            <img
+              src={iconLogo}
+              alt=""
+              aria-hidden
+              className="absolute -top-8 -right-6 w-24 h-24 opacity-90 animate-float hidden md:block"
+            />
             <p className="mt-4 text-sm text-muted-foreground">
               <strong className="text-[var(--primary-deep)]">Mme CISSE Yatera</strong> · Fondatrice & CEO
             </p>
