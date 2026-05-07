@@ -24,26 +24,103 @@ function NotFoundComponent() {
   );
 }
 
+const SITE_URL = "https://cydily-cbc.salimouedz.workers.dev";
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  name: "CYDILY CBC",
+  alternateName: ["CYDILY", "Cydily Cabinet de Bilan de Compétences"],
+  url: SITE_URL,
+  logo: `${SITE_URL}/favicon.png`,
+  description:
+    "Cabinet de formation, audit et conseil accrédité 3FPT à Dakar. Formations gratuites aux métiers de service : ménage, housekeeping, intendance de cuisine, technicien de surface, excellence comportementale.",
+  founder: {
+    "@type": "Person",
+    name: "Yatera CISSE",
+    jobTitle: "Fondatrice & CEO",
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Ouest Foire, Cité Sonatel 3, Villa 27",
+    addressLocality: "Dakar",
+    addressCountry: "SN",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+221782908479",
+    email: "cydily.cbc@gmail.com",
+    contactType: "customer service",
+    availableLanguage: ["French", "Wolof"],
+  },
+  sameAs: [],
+  knowsAbout: [
+    "Formation ménage",
+    "Formation aux métiers de service",
+    "Housekeeping",
+    "Intendance de cuisine",
+    "Technicien de surface",
+    "Excellence comportementale",
+    "Audit QHSE",
+    "Conseil RH",
+  ],
+};
+
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "CYDILY CBC · Formation & Conseil · Faire de l'invisible une force visible" },
-      { name: "description", content: "Cabinet d'audit, conseil et formation accrédité 3FPT. Formations 100% prises en charge à Dakar." },
+      { title: "CYDILY CBC · Formation ménage & métiers de service · Dakar · 3FPT" },
+      {
+        name: "description",
+        content:
+          "CYDILY CBC : formation ménage, housekeeping, intendance de cuisine et métiers de service à Dakar. 100% gratuit, prise en charge 3FPT. Cabinet accrédité.",
+      },
+      {
+        name: "keywords",
+        content:
+          "cydily, cydily cbc, formation ménage, formation aux métiers de service, formation housekeeping Dakar, formation 3FPT, technicien de surface, intendance de cuisine, formation gratuite Dakar, formation femme de chambre Sénégal",
+      },
       { name: "author", content: "CYDILY CBC" },
-      { property: "og:title", content: "CYDILY CBC · Formation & Conseil · Faire de l'invisible une force visible" },
-      { property: "og:description", content: "Cabinet d'audit, conseil et formation accrédité 3FPT. Formations 100% prises en charge à Dakar." },
+      { name: "robots", content: "index, follow" },
+      { name: "googlebot", content: "index, follow" },
+      { property: "og:site_name", content: "CYDILY CBC" },
+      { property: "og:locale", content: "fr_FR" },
+      { property: "og:title", content: "CYDILY CBC · Formation ménage & métiers de service · Dakar" },
+      {
+        property: "og:description",
+        content:
+          "Formations gratuites aux métiers de service à Dakar. Housekeeping, ménage, cuisine, comportement. 100% prises en charge par le 3FPT.",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE_URL },
+      {
+        property: "og:image",
+        content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/4114a9d8-7573-4128-8e3c-5489a9ad8150",
+      },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "CYDILY CBC · Formation & Conseil · Faire de l'invisible une force visible" },
-      { name: "twitter:description", content: "Cabinet d'audit, conseil et formation accrédité 3FPT. Formations 100% prises en charge à Dakar." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/4114a9d8-7573-4128-8e3c-5489a9ad8150" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/4114a9d8-7573-4128-8e3c-5489a9ad8150" },
+      { name: "twitter:title", content: "CYDILY CBC · Formation ménage & métiers de service · Dakar" },
+      {
+        name: "twitter:description",
+        content:
+          "Formations gratuites aux métiers de service à Dakar. 100% prises en charge par le 3FPT.",
+      },
+      {
+        name: "twitter:image",
+        content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/4114a9d8-7573-4128-8e3c-5489a9ad8150",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "canonical", href: SITE_URL },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(organizationJsonLd),
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -53,7 +130,7 @@ export const Route = createRootRoute({
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <head>
         <HeadContent />
       </head>

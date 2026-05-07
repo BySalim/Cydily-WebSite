@@ -6,11 +6,25 @@ import { Phone, Mail, MapPin, Send, CheckCircle2 } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & inscription · CYDILY CBC" },
-      { name: "description", content: "Inscrivez-vous gratuitement à une formation CYDILY CBC ou contactez notre équipe pour un projet entreprise. Dakar · +221 78 290 84 79." },
-      { property: "og:title", content: "Contact CYDILY CBC" },
-      { property: "og:description", content: "Inscription gratuite, devis entreprises, partenariats." },
+      { title: "Contact & inscription gratuite · CYDILY CBC · Dakar" },
+      {
+        name: "description",
+        content:
+          "Inscrivez-vous gratuitement à une formation CYDILY CBC ou contactez notre équipe pour un projet entreprise. Ouest Foire, Dakar · +221 78 290 84 79.",
+      },
+      {
+        name: "keywords",
+        content:
+          "contact cydily, inscription formation 3FPT, inscription formation ménage Dakar, formation gratuite Sénégal, cydily cbc téléphone",
+      },
+      { property: "og:title", content: "Contact CYDILY CBC · Inscription gratuite" },
+      {
+        property: "og:description",
+        content: "Inscription gratuite, devis entreprises, partenariats. Réponse sous 24h.",
+      },
+      { property: "og:url", content: "https://cydily-cbc.salimouedz.workers.dev/contact" },
     ],
+    links: [{ rel: "canonical", href: "https://cydily-cbc.salimouedz.workers.dev/contact" }],
   }),
   component: ContactPage,
 });

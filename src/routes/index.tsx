@@ -21,19 +21,104 @@ import {
   Star,
 } from "lucide-react";
 
+const homeCoursesJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: [
+    {
+      "@type": "Course",
+      position: 1,
+      name: "Formation Housekeeping",
+      description:
+        "Formation aux métiers de l'hôtellerie : femmes et hommes de chambre, entretien, gestion du linge, standards d'accueil.",
+      provider: {
+        "@type": "EducationalOrganization",
+        name: "CYDILY CBC",
+        sameAs: "https://cydily-cbc.salimouedz.workers.dev",
+      },
+      offers: { "@type": "Offer", price: "0", priceCurrency: "XOF", category: "Free" },
+      hasCourseInstance: {
+        "@type": "CourseInstance",
+        courseMode: "onsite",
+        location: {
+          "@type": "Place",
+          address: { "@type": "PostalAddress", addressLocality: "Dakar", addressCountry: "SN" },
+        },
+      },
+    },
+    {
+      "@type": "Course",
+      position: 2,
+      name: "Formation Intendance de cuisine",
+      description: "Hygiène HACCP, organisation, techniques culinaires, gestion des stocks.",
+      provider: {
+        "@type": "EducationalOrganization",
+        name: "CYDILY CBC",
+        sameAs: "https://cydily-cbc.salimouedz.workers.dev",
+      },
+      offers: { "@type": "Offer", price: "0", priceCurrency: "XOF", category: "Free" },
+    },
+    {
+      "@type": "Course",
+      position: 3,
+      name: "Formation Technicien de surface",
+      description:
+        "Méthodologie, produits, dosage, biosécurité hospitalière, industrielle et résidentielle.",
+      provider: {
+        "@type": "EducationalOrganization",
+        name: "CYDILY CBC",
+        sameAs: "https://cydily-cbc.salimouedz.workers.dev",
+      },
+      offers: { "@type": "Offer", price: "0", priceCurrency: "XOF", category: "Free" },
+    },
+    {
+      "@type": "Course",
+      position: 4,
+      name: "Formation Excellence comportementale",
+      description: "Posture professionnelle, communication, ponctualité, écoute, gestion du stress.",
+      provider: {
+        "@type": "EducationalOrganization",
+        name: "CYDILY CBC",
+        sameAs: "https://cydily-cbc.salimouedz.workers.dev",
+      },
+      offers: { "@type": "Offer", price: "0", priceCurrency: "XOF", category: "Free" },
+    },
+  ],
+};
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "CYDILY CBC · Formations gratuites en métiers de service · 3FPT" },
+      {
+        title:
+          "CYDILY CBC · Formation ménage & métiers de service · Dakar · 100% gratuit 3FPT",
+      },
       {
         name: "description",
         content:
-          "Formations 100% prises en charge par le 3FPT : housekeeping, intendance de cuisine, technicien de surface, excellence comportementale. À Dakar.",
+          "CYDILY CBC, cabinet de formation aux métiers de service à Dakar. Formation ménage, housekeeping, cuisine, technicien de surface : 100% gratuit, pris en charge par le 3FPT. Inscription accompagnée.",
       },
-      { property: "og:title", content: "CYDILY CBC · Faire de l'invisible une force visible" },
+      {
+        name: "keywords",
+        content:
+          "cydily, cydily cbc, formation ménage, formation aux métiers de service, formation housekeeping, formation 3FPT Dakar, formation gratuite Sénégal, technicien de surface, intendance de cuisine, formation femme de chambre",
+      },
+      {
+        property: "og:title",
+        content: "CYDILY CBC · Formation ménage & métiers de service · Dakar",
+      },
       {
         property: "og:description",
-        content: "Cabinet d'audit, conseil et formation accrédité 3FPT à Dakar.",
+        content:
+          "Formations gratuites aux métiers de service à Dakar. Housekeeping, ménage, cuisine, comportement. 100% prises en charge par le 3FPT.",
+      },
+      { property: "og:url", content: "https://cydily-cbc.salimouedz.workers.dev/" },
+    ],
+    links: [{ rel: "canonical", href: "https://cydily-cbc.salimouedz.workers.dev/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(homeCoursesJsonLd),
       },
     ],
   }),

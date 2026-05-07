@@ -7,11 +7,25 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/a-propos")({
   head: () => ({
     meta: [
-      { title: "À propos · CYDILY CBC · Mme CISSE Yatera" },
-      { name: "description", content: "L'histoire de CYDILY CBC et de sa fondatrice Mme CISSE Yatera : 20 ans au service de l'humain, du travail social aux ressources humaines." },
-      { property: "og:title", content: "À propos de CYDILY CBC" },
-      { property: "og:description", content: "20 ans d'expérience humaine au service de la dignité du travail." },
+      { title: "À propos · CYDILY CBC · Yatera CISSE, fondatrice · Dakar" },
+      {
+        name: "description",
+        content:
+          "L'histoire de CYDILY CBC, cabinet de formation aux métiers de service à Dakar, et de sa fondatrice Mme Yatera CISSE : 20 ans au service de l'humain, du travail social aux ressources humaines.",
+      },
+      {
+        name: "keywords",
+        content:
+          "cydily cbc, yatera cisse, fondatrice cydily, cabinet formation Dakar, histoire cydily, métiers de service Sénégal",
+      },
+      { property: "og:title", content: "À propos de CYDILY CBC · Yatera CISSE" },
+      {
+        property: "og:description",
+        content: "20 ans d'expérience humaine au service de la dignité du travail.",
+      },
+      { property: "og:url", content: "https://cydily-cbc.salimouedz.workers.dev/a-propos" },
     ],
+    links: [{ rel: "canonical", href: "https://cydily-cbc.salimouedz.workers.dev/a-propos" }],
   }),
   component: AboutPage,
 });

@@ -9,11 +9,29 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 export const Route = createFileRoute("/formations")({
   head: () => ({
     meta: [
-      { title: "Formations gratuites · CYDILY CBC · 3FPT" },
-      { name: "description", content: "4 formations professionnelles 100% prises en charge par le 3FPT : housekeeping, intendance de cuisine, technicien de surface, excellence comportementale." },
-      { property: "og:title", content: "Formations CYDILY CBC · 100% prises en charge 3FPT" },
-      { property: "og:description", content: "Découvrez les 4 formations CYDILY accréditées 3FPT à Dakar." },
+      { title: "Formations métiers de service à Dakar · CYDILY CBC · 100% gratuit 3FPT" },
+      {
+        name: "description",
+        content:
+          "Formation ménage, housekeeping, intendance de cuisine, technicien de surface et excellence comportementale à Dakar. 100% gratuites, prises en charge par le 3FPT.",
+      },
+      {
+        name: "keywords",
+        content:
+          "formation ménage, formation aux métiers de service, formation housekeeping Dakar, formation technicien de surface, formation cuisine HACCP, formation 3FPT, cydily formations",
+      },
+      {
+        property: "og:title",
+        content: "Formations métiers de service à Dakar · CYDILY CBC · Gratuites 3FPT",
+      },
+      {
+        property: "og:description",
+        content:
+          "4 formations gratuites aux métiers de service à Dakar : ménage, cuisine, hygiène, comportement.",
+      },
+      { property: "og:url", content: "https://cydily-cbc.salimouedz.workers.dev/formations" },
     ],
+    links: [{ rel: "canonical", href: "https://cydily-cbc.salimouedz.workers.dev/formations" }],
   }),
   component: FormationsPage,
 });

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cydily-cbc.salimouedz.workers.dev/sitemap.xml

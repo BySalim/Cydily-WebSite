@@ -5,11 +5,25 @@ import { ArrowRight, ShieldCheck, Building2, Briefcase, ClipboardCheck } from "l
 export const Route = createFileRoute("/entreprises")({
   head: () => ({
     meta: [
-      { title: "Entreprises · Audit, conseil & formation sur mesure · CYDILY CBC" },
-      { name: "description", content: "Solutions B2B : audit QHSE, conseil amélioration continue, formations intra-entreprise. Convention 3FPT, 90% pris en charge." },
-      { property: "og:title", content: "CYDILY CBC pour les entreprises" },
-      { property: "og:description", content: "Audit QHSE, conseil et formations sur mesure. 90% financé par le 3FPT." },
+      { title: "Audit, conseil & formation entreprise · CYDILY CBC · Dakar" },
+      {
+        name: "description",
+        content:
+          "Audit QHSE, conseil amélioration continue, formations intra-entreprise sur mesure à Dakar. Convention 3FPT, 90% pris en charge par CYDILY CBC.",
+      },
+      {
+        name: "keywords",
+        content:
+          "audit QHSE Dakar, conseil entreprise Sénégal, formation intra-entreprise, formation 3FPT entreprise, cydily entreprise, conseil RH Dakar",
+      },
+      { property: "og:title", content: "CYDILY CBC pour les entreprises · Dakar" },
+      {
+        property: "og:description",
+        content: "Audit QHSE, conseil et formations sur mesure. 90% financé par le 3FPT.",
+      },
+      { property: "og:url", content: "https://cydily-cbc.salimouedz.workers.dev/entreprises" },
     ],
+    links: [{ rel: "canonical", href: "https://cydily-cbc.salimouedz.workers.dev/entreprises" }],
   }),
   component: EntreprisesPage,
 });
