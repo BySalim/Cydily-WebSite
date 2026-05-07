@@ -85,6 +85,7 @@ export const Route = createRootRoute({
       { name: "author", content: "CYDILY CBC" },
       { name: "robots", content: "index, follow" },
       { name: "googlebot", content: "index, follow" },
+      { name: "google-site-verification", content: "O9kfiwTSxVH-onm_PIKuu3L_aGNwQCcKhx0b9sPY4Rk" },
       { property: "og:site_name", content: "CYDILY CBC" },
       { property: "og:locale", content: "fr_FR" },
       { property: "og:title", content: "CYDILY CBC · Formation ménage & métiers de service · Dakar" },
