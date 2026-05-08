@@ -5,6 +5,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { FAQ, faqItems } from "@/components/FAQ";
 import heroImg from "@/assets/hero-portrait.jpg";
 import iconLogo from "@/assets/cydily-icon.png";
+import iconLogoGold from "@/assets/cydily-icon-gold.png";
 import founderImg from "@/assets/founder.jpg";
 import fHouse from "@/assets/formation-housekeeping.jpg";
 import fCuisine from "@/assets/formation-cuisine.jpg";
@@ -307,10 +308,11 @@ function HomePage() {
 
       {/* SLOGAN BAND */}
       <section className="bg-[var(--primary-deep)] text-white py-16 md:py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04]">
+        <div className="absolute inset-0 opacity-[0.08]">
           <img
-            src={iconLogo}
+            src={iconLogoGold}
             alt=""
+            aria-hidden
             className="absolute -right-20 top-1/2 -translate-y-1/2 w-[500px]"
           />
         </div>
