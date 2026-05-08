@@ -26,11 +26,33 @@ function NotFoundComponent() {
 
 const SITE_URL = "https://cydily-cbc.salimouedz.workers.dev";
 
+const ADDRESS = {
+  "@type": "PostalAddress",
+  streetAddress: "Ouest Foire, Cité Sonatel 3, Villa 27",
+  addressLocality: "Dakar",
+  addressRegion: "Dakar",
+  addressCountry: "SN",
+} as const;
+
+const SOCIAL_PROFILES = [
+  "https://www.tiktok.com/@cydily",
+  "https://www.instagram.com/cydily.cbc/",
+  "https://web.facebook.com/profile.php?id=61583957431231",
+  "https://www.linkedin.com/company/cydily/",
+  "https://www.google.com/search?kgmid=/g/11yn01tyh_",
+];
+
+const GEO = {
+  "@type": "GeoCoordinates",
+  latitude: 14.736555232007166,
+  longitude: -17.472051760341877,
+} as const;
+
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
   name: "CYDILY CBC",
-  alternateName: ["CYDILY", "Cydily Cabinet de Bilan de Compétences"],
+  alternateName: ["CYDILY", "CYDILY Centre de Formation & Cabinet d'Audit"],
   url: SITE_URL,
   logo: `${SITE_URL}/favicon.png`,
   description:
@@ -40,12 +62,7 @@ const organizationJsonLd = {
     name: "Yatera CISSE",
     jobTitle: "Fondatrice & CEO",
   },
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Ouest Foire, Cité Sonatel 3, Villa 27",
-    addressLocality: "Dakar",
-    addressCountry: "SN",
-  },
+  address: ADDRESS,
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+221782908479",
@@ -53,7 +70,7 @@ const organizationJsonLd = {
     contactType: "customer service",
     availableLanguage: ["French", "Wolof"],
   },
-  sameAs: [],
+  sameAs: SOCIAL_PROFILES,
   knowsAbout: [
     "Formation ménage",
     "Formation aux métiers de service",
@@ -64,6 +81,44 @@ const organizationJsonLd = {
     "Audit QHSE",
     "Conseil RH",
   ],
+};
+
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${SITE_URL}/#localbusiness`,
+  name: "CYDILY CBC",
+  alternateName: "CYDILY Centre de Formation & Cabinet d'Audit",
+  description:
+    "Centre de formation et cabinet d'audit & conseil à Dakar. Formations 100% prises en charge par le 3FPT aux métiers de service.",
+  url: SITE_URL,
+  logo: `${SITE_URL}/favicon.png`,
+  image: `${SITE_URL}/favicon.png`,
+  telephone: "+221782908479",
+  email: "cydily.cbc@gmail.com",
+  priceRange: "Gratuit · prise en charge 3FPT",
+  address: ADDRESS,
+  geo: GEO,
+  hasMap: "https://share.google/jqOZRkeFGF99qqlaa",
+  areaServed: [
+    { "@type": "City", name: "Dakar" },
+    { "@type": "Country", name: "Sénégal" },
+  ],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "09:00",
+      closes: "13:00",
+    },
+  ],
+  sameAs: SOCIAL_PROFILES,
 };
 
 export const Route = createRootRoute({
@@ -121,6 +176,10 @@ export const Route = createRootRoute({
       {
         type: "application/ld+json",
         children: JSON.stringify(organizationJsonLd),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(localBusinessJsonLd),
       },
     ],
   }),

@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Reveal } from "@/components/Reveal";
+import { Testimonials } from "@/components/Testimonials";
+import { FAQ, faqItems } from "@/components/FAQ";
 import heroImg from "@/assets/hero-portrait.jpg";
 import iconLogo from "@/assets/cydily-icon.png";
 import founderImg from "@/assets/founder.jpg";
@@ -20,6 +22,16 @@ import {
   Briefcase,
   Star,
 } from "lucide-react";
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
 
 const homeCoursesJsonLd = {
   "@context": "https://schema.org",
@@ -119,6 +131,10 @@ export const Route = createFileRoute("/")({
       {
         type: "application/ld+json",
         children: JSON.stringify(homeCoursesJsonLd),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(faqJsonLd),
       },
     ],
   }),
@@ -357,6 +373,9 @@ function HomePage() {
         </div>
       </section>
 
+      {/* TÉMOIGNAGES */}
+      <Testimonials />
+
       {/* MINI-RÉCIT FONDATRICE */}
       <section className="py-20 md:py-28 bg-[var(--primary-mist)]/40">
         <div className="container-cydily grid md:grid-cols-12 gap-10 items-center">
@@ -509,6 +528,9 @@ function HomePage() {
           </Reveal>
         </div>
       </section>
+
+      {/* FAQ */}
+      <FAQ />
 
       {/* CTA FINAL */}
       <section className="py-20 md:py-28">

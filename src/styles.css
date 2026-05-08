@@ -178,3 +178,17 @@
   50% { transform: translateY(-12px) rotate(2deg); }
 }
 .animate-float { animation: float-soft 6s ease-in-out infinite; }
+
+/* WhatsApp floating button: 1 ping toutes les 5 secondes */
+@keyframes wa-pulse-once {
+  0%, 70%, 100% { transform: scale(1); opacity: 0.65; }
+  20% { transform: scale(1.7); opacity: 0; }
+}
+.animate-wa-pulse { animation: wa-pulse-once 5s ease-out infinite; }
+
+/* WhatsApp floating button: soulèvement subtil et continu */
+@keyframes wa-lift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.animate-wa-lift { animation: wa-lift 3s ease-in-out infinite; }
