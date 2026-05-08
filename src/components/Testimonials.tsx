@@ -1,56 +1,53 @@
 import { Quote } from "lucide-react";
 import { Reveal } from "./Reveal";
-import aissatouImg from "@/assets/testimonial-aissatou.jpg";
-import ibrahimaImg from "@/assets/testimonial-ibrahima.jpg";
-import fatouImg from "@/assets/testimonial-fatou.jpg";
 
 type Testimonial = {
   name: string;
+  initials: string;
   role: string;
   location: string;
   quote: string;
   formation: string;
   accent: "primary" | "accent" | "primary-deep";
-  photo: string;
 };
 
 const testimonials: Testimonial[] = [
   {
     name: "Aïssatou Diop",
+    initials: "AD",
     role: "Femme de chambre",
     location: "Pikine, Dakar",
     formation: "Housekeeping",
     accent: "primary",
-    photo: aissatouImg,
     quote:
       "Avant, je nettoyais les chambres comme je pouvais. Aujourd'hui, je connais les vrais protocoles de l'hôtellerie. Quand je présente une chambre, je suis fière.",
   },
   {
     name: "Ibrahima Fall",
+    initials: "IF",
     role: "Technicien de surface en clinique",
     location: "Parcelles Assainies, Dakar",
     formation: "Technicien de surface",
     accent: "accent",
-    photo: ibrahimaImg,
     quote:
       "Je pensais que nettoyer, c'était juste passer la serpillière. CYDILY m'a appris la méthode, les bons produits, la sécurité. Aujourd'hui je travaille dans une clinique.",
   },
   {
     name: "Fatou Sow",
+    initials: "FS",
     role: "Aide-cuisinière",
     location: "Yoff, Dakar",
     formation: "Intendance de cuisine",
     accent: "primary-deep",
-    photo: fatouImg,
     quote:
       "Je voulais travailler en cuisine sans avoir de diplôme. Le 3FPT a tout pris en charge. Aujourd'hui je gère le poste froid d'un restaurant aux Almadies.",
   },
 ];
 
-const ringStyles: Record<Testimonial["accent"], string> = {
-  primary: "ring-[var(--primary)]",
-  accent: "ring-[var(--accent)]",
-  "primary-deep": "ring-[var(--primary-deep)]",
+const avatarStyles: Record<Testimonial["accent"], string> = {
+  primary: "bg-[var(--primary)] text-white",
+  accent: "bg-[var(--accent)] text-[var(--primary-deep)]",
+  "primary-deep": "bg-[var(--primary-deep)] text-white",
 };
 
 export function Testimonials() {
@@ -85,14 +82,12 @@ export function Testimonials() {
               </blockquote>
 
               <figcaption className="mt-6 pt-5 border-t border-border/70 flex items-center gap-3">
-                <img
-                  src={t.photo}
-                  alt={`${t.name}, ${t.role}`}
-                  loading="lazy"
-                  width={56}
-                  height={56}
-                  className={`w-14 h-14 rounded-full object-cover shrink-0 ring-2 ring-offset-2 ring-offset-white ${ringStyles[t.accent]}`}
-                />
+                <div
+                  className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-base shrink-0 ${avatarStyles[t.accent]}`}
+                  aria-hidden
+                >
+                  {t.initials}
+                </div>
                 <div>
                   <p className="font-semibold text-[var(--primary-deep)] leading-tight">
                     {t.name}
