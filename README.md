@@ -1,8 +1,8 @@
-# CYDILY CBC — Site Vitrine
+# CYDILY CBC : Site Vitrine
 
-Ce projet, c'est le site vitrine que j'ai construit pour **CYDILY CBC**, un organisme de formation professionnelle basé à Dakar. CYDILY forme des gens aux métiers de service (nettoyage, cuisine, hôtellerie…) et ce qui est fort, c'est que les formations sont **financées à 100% par le 3FPT** — concrètement, c'est gratuit pour ceux qui s'inscrivent.
+Ce projet, c'est le site vitrine que j'ai construit pour **CYDILY CBC**, un organisme de formation professionnelle basé à Dakar. CYDILY forme des gens aux métiers de service (nettoyage, cuisine, hôtellerie…) et ce qui est fort, c'est que les formations sont **financées à 100% par le 3FPT**, donc concrètement c'est gratuit pour ceux qui s'inscrivent.
 
-Le projet a été réalisé dans le cadre des **Grands Projets 2026 — ISM × Digital Campus**.
+Le projet a été réalisé dans le cadre des **Grands Projets 2026** de l'**ISM × Digital Campus**.
 
 ---
 
@@ -18,11 +18,11 @@ La fondatrice, **Mme CISSE Yatera**, a plus de 20 ans d'expérience entre le tra
 
 ## Ce qu'on trouve sur le site
 
-- **Accueil** — présentation de CYDILY et mise en avant de la gratuité des formations
-- **Formations** — les 4 formations proposées (technicien de surface, cuisine, housekeeping, excellence comportementale)
-- **Entreprises** — l'offre B2B (audit QHSE, conseil, formation intra)
-- **À propos** — l'histoire et les valeurs de CYDILY
-- **Contact** — formulaire de contact
+- **Accueil :** présentation de CYDILY et mise en avant de la gratuité des formations
+- **Formations :** les 4 formations proposées (technicien de surface, cuisine, housekeeping, excellence comportementale)
+- **Entreprises :** l'offre B2B (audit QHSE, conseil, formation intra)
+- **À propos :** l'histoire et les valeurs de CYDILY
+- **Contact :** formulaire de contact
 
 ---
 
